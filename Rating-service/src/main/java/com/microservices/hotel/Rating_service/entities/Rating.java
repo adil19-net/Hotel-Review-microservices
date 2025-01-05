@@ -1,32 +1,20 @@
-package com.microservices.hotel.User_service.entities;
+package com.microservices.hotel.Rating_service.entities;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document("user_ratings")
 public class Rating {
+    @Id
     private String ratingId;
     private String userId;
     private String hotelId;
     private Integer rating;
     private String feedback;
 
-    private Hotel hotel;
-
-    public Rating(String ratingId, String userId, String hotelId, Integer rating, String feedback, Hotel hotel) {
-        this.ratingId = ratingId;
-        this.userId = userId;
-        this.hotelId = hotelId;
-        this.rating = rating;
-        this.feedback = feedback;
-        this.hotel = hotel;
-    }
-
-    public Hotel getHotel() {
-        return hotel;
-    }
-
-    public void setHotel(Hotel hotel) {
-        this.hotel = hotel;
-    }
-
     public Rating() {
     }
+
 
     public Rating(String ratingId, String userId, String hotelId, Integer rating, String feedback) {
         this.ratingId = ratingId;
